@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mars Needs Dogs | $MND — Not to the Moon. Straight to Mars.</title>
+<meta name="description" content="Mars Needs Dogs ($MND) — The Official Meme Coin for the Future of Humanity. Interplanetary Dog Protocol on BNB Chain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mars-red: #c0392b;
+    --mars-orange: #e67e22;
+    --mars-dark: #0a0506;
+    --mars-surface: #120a08;
+    --mars-card: #1a0d0a;
+    --mars-border: #3d1a14;
+    --mars-glow: #e74c3c;
+    --gold: #f39c12;
+    --gold-light: #f1c40f;
+    --text-primary: #f5e6d3;
+    --text-secondary: #c4a882;
+    --text-muted: #8a6a55;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--mars-dark);
+    color: var(--text-primary);
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* STARS */
+  .stars {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: 
+      radial-gradient(1px 1px at 10% 15%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 8%, #fff9 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 30%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 5%, #fff8 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 20%, #fff 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 12%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 45%, #fff7 0%, transparent 100%),
+      radial-gradient(1px 1px at 32% 60%, #fff8 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 50%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 78% 42%, #fff9 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 55%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 75%, #fff8 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 48% 80%, #fff 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 78%, #fff9 0%, transparent 100%),
+      radial-gradient(1px 1px at 22% 90%, #fff7 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 88%, #fff 0%, transparent 100%);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 4rem;
+    background: linear-gradient(to bottom, #0a050699 0%, transparent 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #3d1a1422;
+  }
+
+  .nav-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--mars-orange);
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--mars-orange); }
+
+  .nav-btn {
+    background: linear-gradient(135deg, var(--mars-red), var(--mars-orange));
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .mars-planet {
+    position: absolute; right: -120px; top: 50%; transform: translateY(-60%);
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #e67e22, #c0392b 50%, #7b241c 80%, #3d0f0a);
+    box-shadow: -60px 0 120px #c0392b44, inset -40px -40px 80px #1a000066;
+    opacity: 0.6;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: #c0392b22;
+    border: 1px solid #c0392b55;
+    color: var(--mars-orange);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .hero h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 60px #e74c3c55;
+  }
+  .hero h1 .needs { color: var(--mars-orange); }
+  .hero h1 .dogs { color: var(--gold); }
+
+  .hero-ticker {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--mars-red);
+    letter-spacing: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #c0392b, #e67e22);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px #c0392b44;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #c0392b66; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--mars-border);
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--mars-orange); color: var(--mars-orange); }
+
+  .contract-box {
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .contract-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mars-orange);
+    font-family: 'Orbitron', monospace;
+  }
+  .contract-addr {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    word-break: break-all;
+  }
+  .copy-btn {
+    background: #c0392b33;
+    border: 1px solid #c0392b55;
+    color: var(--mars-orange);
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: #c0392b55; }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: relative; z-index: 1;
+    background: var(--mars-surface);
+    border-top: 1px solid var(--mars-border);
+    border-bottom: 1px solid var(--mars-border);
+    padding: 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-item {}
+  .stat-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--mars-orange);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* SECTIONS */
+  section {
+    position: relative; z-index: 1;
+    padding: 6rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--mars-orange);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .section-title span { color: var(--mars-orange); }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-features {
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+  .feature-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    transition: border-color 0.2s;
+  }
+  .feature-item:hover { border-color: #c0392b77; }
+  .feature-icon {
+    font-size: 1.8rem; flex-shrink: 0; margin-top: 0.1rem;
+  }
+  .feature-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+  .feature-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .feature-desc-vi {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+
+  .about-story {
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a0d0a, #0f0605);
+    border: 1px solid var(--mars-border);
+    border-radius: 12px;
+  }
+  .about-story p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+  .about-story .highlight {
+    color: var(--mars-orange); font-weight: 600;
+  }
+  .about-story .quote {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--gold);
+    border-left: 3px solid var(--mars-red);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+
+  /* TOKENOMICS */
+  .tokenomics-section { background: var(--mars-surface); }
+  .token-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .pie-wrapper {
+    display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  }
+  .pie-chart {
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #e74c3c 0% 25%,
+      #3d1410 25% 85%,
+      #f39c12 85% 90%,
+      #8e44ad 90% 100%
+    );
+    box-shadow: 0 0 40px #e74c3c33;
+    position: relative;
+  }
+  .pie-center {
+    position: absolute; inset: 25%;
+    background: var(--mars-surface);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .pie-center span:first-child {
+    font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 700; color: var(--mars-orange);
+  }
+  .pie-center span:last-child {
+    font-size: 0.6rem; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase;
+  }
+
+  .token-details { display: flex; flex-direction: column; gap: 1rem; }
+
+  .token-row {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    transition: border-color 0.2s;
+  }
+  .token-row:hover { border-color: var(--mars-border); }
+
+  .token-dot {
+    width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+  }
+  .dot-liq { background: var(--mars-red); }
+  .dot-burn { background: #2c1208; border: 2px solid #5c2510; }
+  .dot-holder { background: var(--gold); }
+  .dot-dev { background: #8e44ad; }
+
+  .token-info { flex: 1; }
+  .token-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+  }
+  .token-name-vi {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+  .token-bar-wrap {
+    background: #1f0c08;
+    border-radius: 2px;
+    height: 4px;
+    margin-top: 0.4rem;
+  }
+  .token-bar { height: 4px; border-radius: 2px; }
+
+  .token-pct {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--mars-orange);
+    min-width: 52px;
+    text-align: right;
+  }
+
+  .tax-box {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #1a0d0a, #120606);
+    border: 1px solid var(--mars-red);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    display: flex; gap: 1rem; align-items: center;
+  }
+  .tax-badge {
+    background: #c0392b22;
+    border: 1px solid #c0392b55;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    min-width: 100px;
+  }
+  .tax-pct {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--mars-orange);
+    display: block;
+  }
+  .tax-label { font-size: 0.65rem; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; }
+  .tax-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ROADMAP */
+  .roadmap-line {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .roadmap-line::before {
+    content: '';
+    position: absolute;
+    left: 12px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--mars-red), #c0392b44, transparent);
+  }
+
+  .phase {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+  .phase-dot {
+    position: absolute;
+    left: -2.1rem; top: 0.25rem;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--mars-surface);
+    border: 2px solid var(--mars-red);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .phase-dot.active { background: var(--mars-red); }
+  .phase-dot::after {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--mars-orange);
+    display: none;
+  }
+  .phase-dot.active::after { display: block; }
+
+  .phase-period {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--mars-orange);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .phase-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+  .phase-title-vi {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+    font-style: italic;
+  }
+
+  .phase-items { display: flex; flex-direction: column; gap: 0.4rem; }
+  .phase-item {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .phase-item::before {
+    content: '›';
+    color: var(--mars-red);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: -1px;
+  }
+  .phase-item .vi { color: var(--text-muted); font-size: 0.78rem; font-style: italic; display: block; }
+
+  .phase-badge {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background: #c0392b22;
+    border: 1px solid #c0392b44;
+    border-radius: 3px;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    color: var(--mars-orange);
+    font-family: 'Orbitron', monospace;
+    text-transform: uppercase;
+  }
+  .phase-badge.active { background: #c0392b44; border-color: var(--mars-red); color: #fff; }
+
+  /* UTILITY */
+  .utility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .utility-card {
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .utility-card:hover {
+    border-color: #c0392b77;
+    transform: translateY(-4px);
+  }
+  .utility-emoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+  .utility-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+  .utility-title-vi {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+  .utility-desc {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* HOW TO BUY */
+  .buy-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    counter-reset: step;
+  }
+  .buy-step {
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    counter-increment: step;
+  }
+  .buy-step::before {
+    content: counter(step);
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #c0392b11;
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    line-height: 1;
+  }
+  .step-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+  .step-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--mars-orange);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+  .step-title-vi {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .step-desc { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, transparent, #c0392b0a, transparent);
+    position: relative; z-index: 1;
+  }
+  .cta-section h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 40px #e74c3c44;
+  }
+  .cta-section p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  /* SOCIAL */
+  .social-bar {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .social-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: var(--mars-card);
+    border: 1px solid var(--mars-border);
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-link:hover { border-color: var(--mars-orange); color: var(--mars-orange); }
+  .social-icon { font-size: 1.1rem; }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    background: var(--mars-surface);
+    border-top: 1px solid var(--mars-border);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.8rem; color: var(--text-muted); }
+  .footer-disclaimer {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    max-width: 500px;
+  }
+
+  /* GLOW LINES */
+  .glow-divider {
+    position: relative; z-index: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--mars-red), transparent);
+    opacity: 0.4;
+    margin: 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px #c0392b33; }
+    50% { box-shadow: 0 0 50px #c0392b66; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-dog-icon {
+    font-size: 5rem;
+    animation: float 4s ease-in-out infinite;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .hero > * { animation: fade-up 0.8s ease both; }
+  .hero > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero > *:nth-child(6) { animation-delay: 0.6s; }
+  .hero > *:nth-child(7) { animation-delay: 0.7s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .stats-bar { padding: 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .token-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; }
+    .mars-planet { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">$<span>MND</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#tokenomics">Tokenomics</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#utility">Utility</a></li>
+    <li><a href="#buy">How to Buy</a></li>
+  </ul>
+  <a href="https://four.meme/vi/token/0xfb1b69977e21958cbf5467eba53e697196e9ffff" target="_blank" class="nav-btn">🚀 Buy $MND</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="max-width:100%; padding-left: 2rem; padding-right: 2rem;">
+  <div class="mars-planet"></div>
+  <span class="hero-dog-icon">🐕</span>
+  <div class="hero-tag">🔴 Interplanetary Dog Protocol on BNB Chain</div>
+  <h1>MARS <span class="needs">NEEDS</span> <span class="dogs">DOGS</span></h1>
+  <div class="hero-ticker">$MND</div>
+  <p class="hero-tagline">Not to the Moon. Straight to Mars.</p>
+  <p class="hero-sub">The Official Meme Coin for the Future of Humanity | Đồng meme coin chính thức cho tương lai nhân loại</p>
+  <div class="hero-btns">
+    <a href="https://four.meme/vi/token/0xfb1b69977e21958cbf5467eba53e697196e9ffff" target="_blank" class="btn-primary">🚀 Buy Now / Mua Ngay</a>
+    <a href="#about" class="btn-secondary">Learn More / Tìm Hiểu</a>
+  </div>
+  <div class="contract-box">
+    <span class="contract-label">Contract</span>
+    <span class="contract-addr" id="ca">0xfb1b69977e21958cbf5467eba53e697196e9ffff</span>
+    <button class="copy-btn" onclick="copyCA()">COPY</button>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-value">1,000,000,000</span>
+    <span class="stat-label">Total Supply / Tổng Cung</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">60%</span>
+    <span class="stat-label">Burn Supply / Lượng Burn</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">5%</span>
+    <span class="stat-label">Tax Per TX / Phí Giao Dịch</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">BNB</span>
+    <span class="stat-label">Chain / Mạng</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-value">🔴</span>
+    <span class="stat-label">Destination: Mars</span>
+  </div>
+</div>
+
+<div class="glow-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">// 01. About the Mission</div>
+  <h2 class="section-title">Why Dogs? <span>Why Mars?</span></h2>
+  <p class="section-sub">Tại sao Chó? Tại sao Sao Hỏa? — Because the future belongs to those who dare.</p>
+  <div class="about-grid">
+    <div class="about-features">
+      <div class="feature-item">
+        <span class="feature-icon">🔥</span>
+        <div>
+          <div class="feature-title">Auto-Burn Mechanism</div>
+          <div class="feature-desc">4% of every transaction is automatically burned forever, reducing supply and increasing scarcity over time.</div>
+          <div class="feature-desc-vi">4% mỗi giao dịch bị đốt vĩnh viễn, giảm cung và tăng giá trị theo thời gian.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">💎</span>
+        <div>
+          <div class="feature-title">Holder Rewards</div>
+          <div class="feature-desc">1% of every transaction is distributed to all $MND holders. Hold to earn, no staking required.</div>
+          <div class="feature-desc-vi">1% mỗi giao dịch chia đều cho tất cả holder. Giữ coin là có lời.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🐕</span>
+        <div>
+          <div class="feature-title">Community Driven</div>
+          <div class="feature-desc">Built by the community, for the community. Mars Needs Dogs is powered by dog-energy and meme magic.</div>
+          <div class="feature-desc-vi">Xây dựng bởi cộng đồng, vì cộng đồng. Năng lượng chó — phép màu meme.</div>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🛡️</span>
+        <div>
+          <div class="feature-title">BNB Chain Security</div>
+          <div class="feature-desc">Built on BNB Chain — fast, low-fee, and battle-tested blockchain infrastructure.</div>
+          <div class="feature-desc-vi">Xây dựng trên BNB Chain — nhanh, phí thấp, bảo mật cao.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-story">
+      <p>Doge had his time. Shiba had his time. Now it's <span class="highlight">OUR time</span> — the time of the dogs who dare to dream beyond the moon.</p>
+      <div class="quote">"Not to the Moon. Straight to Mars. 🔴"</div>
+      <p>Mars Needs Dogs ($MND) is the <span class="highlight">Interplanetary Dog Protocol</span> built on BNB Chain. We combine the raw power of meme culture with real utility: burn mechanics, staking rewards, NFT collection, and a GameFi ecosystem — all wrapped in the unstoppable energy of dogs heading to Mars.</p>
+      <p style="font-size:0.85rem; color: var(--text-muted); font-style: italic;">Doge đã có thời. Shiba đã có thời. Giờ là thời của chúng ta — những chú chó dám mơ vượt lên trên Mặt Trăng, thẳng tiến Sao Hỏa. Elon, lũ chó đang đến! 🐕🚀🔴</p>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- TOKENOMICS -->
+<div style="background: var(--mars-surface);">
+<section id="tokenomics">
+  <div class="section-tag">// 02. Tokenomics</div>
+  <h2 class="section-title">Token <span>Distribution</span></h2>
+  <p class="section-sub">Total Supply: 1,000,000,000 $MND — Designed for deflation and long-term value.</p>
+
+  <div class="token-grid">
+    <div class="pie-wrapper">
+      <div class="pie-chart">
+        <div class="pie-center">
+          <span>1B</span>
+          <span>$MND</span>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center;">
+        <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-secondary)"><span style="width:10px;height:10px;border-radius:50%;background:var(--mars-red);display:inline-block"></span>Liquidity 25%</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-secondary)"><span style="width:10px;height:10px;border-radius:50%;background:#2c1208;border:1.5px solid #7b3010;display:inline-block"></span>Burn 60%</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-secondary)"><span style="width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block"></span>Holder 5%</span>
+        <span style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--text-secondary)"><span style="width:10px;height:10px;border-radius:50%;background:#8e44ad;display:inline-block"></span>Dev 10%</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="token-details">
+        <div class="token-row">
+          <span class="token-dot dot-liq"></span>
+          <div class="token-info">
+            <div class="token-name">Liquidity Pool</div>
+            <div class="token-name-vi">Thanh khoản</div>
+            <div class="token-bar-wrap"><div class="token-bar" style="width:25%;background:var(--mars-red)"></div></div>
+          </div>
+          <span class="token-pct">25%</span>
+        </div>
+        <div class="token-row">
+          <span class="token-dot dot-burn"></span>
+          <div class="token-info">
+            <div class="token-name">🔥 Burn Reserve</div>
+            <div class="token-name-vi">Lượng token bị đốt vĩnh viễn</div>
+            <div class="token-bar-wrap"><div class="token-bar" style="width:60%;background:#7b3010"></div></div>
+          </div>
+          <span class="token-pct">60%</span>
+        </div>
+        <div class="token-row">
+          <span class="token-dot dot-holder"></span>
+          <div class="token-info">
+            <div class="token-name">💎 Holder Rewards</div>
+            <div class="token-name-vi">Thưởng cho holder</div>
+            <div class="token-bar-wrap"><div class="token-bar" style="width:5%;background:var(--gold)"></div></div>
+          </div>
+          <span class="token-pct">5%</span>
+        </div>
+        <div class="token-row">
+          <span class="token-dot dot-dev"></span>
+          <div class="token-info">
+            <div class="token-name">Dev & Operations</div>
+            <div class="token-name-vi">Phát triển & vận hành</div>
+            <div class="token-bar-wrap"><div class="token-bar" style="width:10%;background:#8e44ad"></div></div>
+          </div>
+          <span class="token-pct">10%</span>
+        </div>
+      </div>
+
+      <div class="tax-box">
+        <div class="tax-badge">
+          <span class="tax-pct">5%</span>
+          <span class="tax-label">TX Tax</span>
+        </div>
+        <div class="tax-desc">
+          <strong style="color:var(--mars-orange)">Transaction Tax / Phí giao dịch:</strong><br>
+          🔥 4% Auto-Burn — giảm cung tự động<br>
+          💎 1% Holder Rewards — thưởng cho người nắm giữ
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="glow-divider"></div>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-tag">// 03. Roadmap</div>
+  <h2 class="section-title">Mission to <span>Mars</span></h2>
+  <p class="section-sub">4 phases. 1 destination. Mars. — 4 giai đoạn. 1 điểm đến. Sao Hỏa.</p>
+
+  <div class="roadmap-line">
+
+    <div class="phase">
+      <div class="phase-dot active"></div>
+      <div class="phase-period">Q3 2025 — Phase 1</div>
+      <div class="phase-title">🌱 Launch & Liftoff</div>
+      <div class="phase-title-vi">Khởi động — Rời bệ phóng</div>
+      <div class="phase-items">
+        <div class="phase-item">Token launch on BNB Chain <span class="vi">Ra mắt token trên BNB Chain</span></div>
+        <div class="phase-item">List on PancakeSwap & Four.meme <span class="vi">Niêm yết PancakeSwap & Four.meme</span></div>
+        <div class="phase-item">Auto-burn mechanism activated <span class="vi">Kích hoạt cơ chế tự đốt token</span></div>
+        <div class="phase-item">Community building — target 1,000 holders <span class="vi">Xây dựng cộng đồng — mục tiêu 1,000 holder</span></div>
+        <div class="phase-item">Social media & meme campaign launch <span class="vi">Chiến dịch mạng xã hội & meme</span></div>
+        <div class="phase-item">Website launch <span class="vi">Ra mắt website chính thức</span></div>
+      </div>
+      <span class="phase-badge active">🔴 In Progress / Đang thực hiện</span>
+    </div>
+
+    <div class="phase">
+      <div class="phase-dot"></div>
+      <div class="phase-period">Q4 2025 — Phase 2</div>
+      <div class="phase-title">🚀 Orbit & Growth</div>
+      <div class="phase-title-vi">Vào quỹ đạo — Tăng trưởng</div>
+      <div class="phase-items">
+        <div class="phase-item">CoinGecko & CoinMarketCap listing <span class="vi">Lên CoinGecko & CoinMarketCap</span></div>
+        <div class="phase-item">Staking platform launch — earn $MND <span class="vi">Ra mắt nền tảng staking — kiếm $MND</span></div>
+        <div class="phase-item">Target 10,000 holders <span class="vi">Mục tiêu 10,000 holder</span></div>
+        <div class="phase-item">CEX listing negotiations begin <span class="vi">Bắt đầu đàm phán lên sàn tập trung</span></div>
+        <div class="phase-item">Marketing partnerships & influencer campaign <span class="vi">Hợp tác marketing & influencer</span></div>
+      </div>
+      <span class="phase-badge">Upcoming / Sắp tới</span>
+    </div>
+
+    <div class="phase">
+      <div class="phase-dot"></div>
+      <div class="phase-period">Q1 2026 — Phase 3</div>
+      <div class="phase-title">🖼️ NFT Mars Colony</div>
+      <div class="phase-title-vi">NFT thuộc địa Sao Hỏa</div>
+      <div class="phase-items">
+        <div class="phase-item">Mars Dogs NFT Collection launch (10,000 unique dogs) <span class="vi">Ra mắt bộ sưu tập NFT 10,000 chú chó độc đáo</span></div>
+        <div class="phase-item">NFT holders earn boosted staking rewards <span class="vi">NFT holder nhận thưởng staking tăng cường</span></div>
+        <div class="phase-item">NFT marketplace integration <span class="vi">Tích hợp marketplace NFT</span></div>
+        <div class="phase-item">First CEX listing <span class="vi">Lên sàn tập trung đầu tiên</span></div>
+      </div>
+      <span class="phase-badge">Upcoming / Sắp tới</span>
+    </div>
+
+    <div class="phase">
+      <div class="phase-dot"></div>
+      <div class="phase-period">Q2 2026 — Phase 4</div>
+      <div class="phase-title">🎮 Mars GameFi Ecosystem</div>
+      <div class="phase-title-vi">Hệ sinh thái GameFi Sao Hỏa</div>
+      <div class="phase-items">
+        <div class="phase-item">Mars Dogs GameFi launch — play & earn $MND <span class="vi">Ra mắt GameFi — chơi game kiếm $MND</span></div>
+        <div class="phase-item">NFT integration in game (use your Mars Dog NFT) <span class="vi">Dùng NFT của bạn trong game</span></div>
+        <div class="phase-item">Major CEX listings (Tier 1) <span class="vi">Lên các sàn lớn Tier 1</span></div>
+        <div class="phase-item">Mars ecosystem expansion — full DeFi suite <span class="vi">Mở rộng hệ sinh thái DeFi đầy đủ</span></div>
+      </div>
+      <span class="phase-badge">Future / Tương lai</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- UTILITY -->
+<section id="utility" style="background: transparent;">
+  <div class="section-tag">// 04. Utility</div>
+  <h2 class="section-title">More Than a <span>Meme</span></h2>
+  <p class="section-sub">Không chỉ là meme — $MND được xây dựng với hệ sinh thái thực sự.</p>
+  <div class="utility-grid">
+    <div class="utility-card">
+      <span class="utility-emoji">🔥</span>
+      <div class="utility-title">Auto-Burn</div>
+      <div class="utility-title-vi">Đốt Token Tự Động</div>
+      <div class="utility-desc">4% of every transaction is permanently burned. Supply decreases with every trade — pure deflation. / 4% mỗi giao dịch bị đốt vĩnh viễn.</div>
+    </div>
+    <div class="utility-card">
+      <span class="utility-emoji">💎</span>
+      <div class="utility-title">Staking Rewards</div>
+      <div class="utility-title-vi">Staking Kiếm Lời</div>
+      <div class="utility-desc">Lock your $MND to earn passive rewards. NFT holders receive boosted APY on their staked tokens. / Khóa $MND để nhận thưởng thụ động.</div>
+    </div>
+    <div class="utility-card">
+      <span class="utility-emoji">🖼️</span>
+      <div class="utility-title">NFT Collection</div>
+      <div class="utility-title-vi">Bộ Sưu Tập NFT</div>
+      <div class="utility-desc">10,000 unique Mars Dogs NFTs. Each one grants special perks, boosted rewards, and exclusive access to the Mars Colony. / 10,000 NFT chú chó độc đáo.</div>
+    </div>
+    <div class="utility-card">
+      <span class="utility-emoji">🎮</span>
+      <div class="utility-title">GameFi</div>
+      <div class="utility-title-vi">Game Kiếm Tiền</div>
+      <div class="utility-desc">Play the Mars Dogs GameFi and earn $MND. Use your NFT as your in-game character. Play to earn, fight to Mars. / Chơi game kiếm $MND thật.</div>
+    </div>
+    <div class="utility-card">
+      <span class="utility-emoji">💰</span>
+      <div class="utility-title">Holder Passive Income</div>
+      <div class="utility-title-vi">Thu Nhập Thụ Động</div>
+      <div class="utility-desc">1% of all transactions auto-distributed to holders. Just hold $MND in your wallet and earn every time someone trades. / Chỉ cần giữ, tự động nhận thưởng.</div>
+    </div>
+    <div class="utility-card">
+      <span class="utility-emoji">🌌</span>
+      <div class="utility-title">Mars Ecosystem</div>
+      <div class="utility-title-vi">Hệ Sinh Thái Sao Hỏa</div>
+      <div class="utility-desc">A complete DeFi + GameFi + NFT ecosystem. $MND is the fuel that powers the entire Mars Colony on BNB Chain. / $MND — nhiên liệu cho Sao Hỏa.</div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<!-- HOW TO BUY -->
+<div style="background: var(--mars-surface);">
+<section id="buy">
+  <div class="section-tag">// 05. How to Buy</div>
+  <h2 class="section-title">Join the <span>Mission</span></h2>
+  <p class="section-sub">Tham gia sứ mệnh — Mua $MND trong 4 bước đơn giản.</p>
+
+  <div class="buy-steps">
+    <div class="buy-step">
+      <span class="step-icon">📲</span>
+      <div class="step-title">Get a Wallet</div>
+      <div class="step-title-vi">Tạo ví crypto</div>
+      <div class="step-desc">Download MetaMask or Trust Wallet. Connect to BNB Smart Chain network. / Tải MetaMask hoặc Trust Wallet. Kết nối mạng BNB Chain.</div>
+    </div>
+    <div class="buy-step">
+      <span class="step-icon">💵</span>
+      <div class="step-title">Get BNB</div>
+      <div class="step-title-vi">Nạp BNB vào ví</div>
+      <div class="step-desc">Buy BNB from any exchange (Binance, OKX...) and send to your wallet. You need BNB to buy $MND. / Mua BNB từ sàn và chuyển vào ví.</div>
+    </div>
+    <div class="buy-step">
+      <span class="step-icon">🔗</span>
+      <div class="step-title">Add $MND Contract</div>
+      <div class="step-title-vi">Thêm hợp đồng $MND</div>
+      <div class="step-desc">Copy and add the $MND contract address to your wallet to see your balance. / Sao chép địa chỉ hợp đồng và thêm vào ví.</div>
+    </div>
+    <div class="buy-step">
+      <span class="step-icon">🚀</span>
+      <div class="step-title">Buy on Four.meme</div>
+      <div class="step-title-vi">Mua trên Four.meme</div>
+      <div class="step-desc">Visit four.meme, search $MND, and swap BNB for $MND. Set slippage to 6-8%. To Mars! / Vào four.meme, tìm $MND, đổi BNB lấy $MND.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="https://four.meme/vi/token/0xfb1b69977e21958cbf5467eba53e697196e9ffff" target="_blank" class="btn-primary" style="font-size:1rem; padding: 1.1rem 3rem;">🚀 Buy $MND Now</a>
+  </div>
+</section>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Elon, The Dogs<br>Are Coming 🔴</h2>
+  <p>Join thousands of believers. Not to the Moon. Straight to Mars.</p>
+  <div class="hero-btns" style="justify-content:center;">
+    <a href="https://four.meme/vi/token/0xfb1b69977e21958cbf5467eba53e697196e9ffff" target="_blank" class="btn-primary">🚀 Buy $MND</a>
+    <a href="https://x.com/MarsDogsCoin" target="_blank" class="btn-secondary">🐦 Follow @MarsDogsCoin</a>
+  </div>
+  <div class="social-bar">
+    <a href="https://x.com/MarsDogsCoin" target="_blank" class="social-link">
+      <span class="social-icon">🐦</span> Twitter / X
+    </a>
+    <a href="https://four.meme/vi/token/0xfb1b69977e21958cbf5467eba53e697196e9ffff" target="_blank" class="social-link">
+      <span class="social-icon">🛒</span> Four.meme
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="nav-logo" style="margin-bottom:0.4rem;">$<span style="color:var(--gold)">MND</span></div>
+    <p>Mars Needs Dogs © 2025 | BNB Chain</p>
+  </div>
+  <p class="footer-disclaimer">⚠️ $MND is a meme coin with no intrinsic value or financial return expectation. Always DYOR (Do Your Own Research) before investing. Crypto is high risk. / $MND là meme coin, không có giá trị nội tại hay kỳ vọng lợi nhuận tài chính. Luôn tự nghiên cứu trước khi đầu tư.</p>
+</footer>
+
+<script>
+function copyCA() {
+  const addr = document.getElementById('ca').textContent;
+  navigator.clipboard.writeText(addr).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const orig = btn.textContent;
+    btn.textContent = '✓ COPIED!';
+    btn.style.background = '#27ae6044';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+    }, 2000);
+  });
+}
+
+// Smooth scroll nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feature-item, .token-row, .phase, .utility-card, .buy-step').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
